@@ -1,0 +1,6 @@
+python infer_from_saved_custom.py \
+  --checkpoint ./saved_models/custom/GALIP_nf64_normal_custom_256_2025_10_18_12_34_36/state_epoch_300.pth \
+  --cfg ./cfg/custom.yml \
+  --captions_file ./text_captions.txt \
+  --num_images 5 \
+  --gpu_id 0

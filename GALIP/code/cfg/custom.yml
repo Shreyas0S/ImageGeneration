@@ -1,0 +1,50 @@
+CONFIG_NAME: 'custom'
+dataset_name: 'coco'
+data_dir: './data/custom'
+
+imsize: 256
+z_dim: 100
+cond_dim: 512
+manual_seed: 100
+cuda: True
+
+clip4evl:
+  src: clip
+  type: ViT-B/32
+  context_length: 77
+clip4trn:
+  src: clip
+  type: ViT-B/32
+  context_length: 77
+clip4text:
+  src: clip
+  type: ViT-B/32
+  context_length: 77
+freeze_clip: false
+
+stamp: 'finetune'
+state_epoch: 0
+max_epoch: 301
+batch_size: 16
+gpu_id: 0
+nf: 64
+ch_size: 3
+
+scaler_min: 64
+growth_interval: 2000
+lr_g: 0.0001
+lr_d: 0.0004
+sim_w: 4.0
+
+gen_interval: 15
+test_interval: 5
+save_interval: 150
+
+sample_times: 1
+npz_path: ''
+log_dir: 'new'
+# LoRA fine-tuning options (can be toggled from this config)
+use_lora: False
+# Comma-separated keywords used to detect LoRA/adapter parameters by name
+# Default matches typical LoRA naming: 'lora', 'adapter', 'lora_'
+lora_keywords: 'lora,adapter,lora_'
